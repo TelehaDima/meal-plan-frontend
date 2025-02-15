@@ -19,7 +19,7 @@ const addMeal = ( title, setTitle, setMeal ) => {
 }
 
 const editMeal = (mealId, title, setTitle, setMeal, setEditing) => {
-   axios.post('https://meal-plan-backend-eg0b.onrender.com/editMeals', {_id: mealId, title })   
+   axios.put('https://meal-plan-backend-eg0b.onrender.com/editMeals', {_id: mealId, title })   
         .then((data) => {
     console.log(data)
             setTitle("")
@@ -29,7 +29,7 @@ const editMeal = (mealId, title, setTitle, setMeal, setEditing) => {
 }
 
 const deleteMeal = (_id, setMeal) => {
-   axios.post('https://meal-plan-backend-eg0b.onrender.com/deletedMeals', {_id})   
+   axios.delete('https://meal-plan-backend-eg0b.onrender.com/deleteMeal', {_id})   
         .then((data) => {
     console.log(data)
     getAllMeals(setMeal)
