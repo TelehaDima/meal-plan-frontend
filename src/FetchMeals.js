@@ -29,7 +29,7 @@ const editMeal = (mealId, title, setTitle, setMeal, setEditing) => {
 }
 
 const deleteMeal = (_id, setMeal) => {
-   axios.delete('https://meal-plan-backend-eg0b.onrender.com/deleteMeal', {_id})   
+   axios.post('https://meal-plan-backend-eg0b.onrender.com/deleteMeal', {_id})   
         .then((data) => {
     console.log(data)
     getAllMeals(setMeal)
